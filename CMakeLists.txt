@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.6)
+PROJECT(RPC)
+set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
+ADD_SUBDIRECTORY(src bin)
