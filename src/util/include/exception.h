@@ -1,4 +1,4 @@
-#include <stdexception>
+#include <exception>
 #include <string>
 
 namespace rpc{
@@ -7,7 +7,7 @@ namespace rpc{
       std::string m_msg;
     public:
       const char *what() const noexcept override {
-        return m_msg.c_str()
+        return m_msg.c_str();
       }
   
       RpcException(std::string &msg):m_msg(msg){}

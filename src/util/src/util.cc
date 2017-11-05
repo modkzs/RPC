@@ -1,5 +1,5 @@
-#include "include/util.h"
 #include "include/exception.h"
+#include "include/util.h"
 
 using namespace rpc;
 

@@ -1,9 +1,8 @@
-FILE(GLOB SOURCE "network/*/*.cc" "network/*/*.h" "serialize/*/*.h" "serialize/*/*.cc" "util/*/*.cc" "util/*/*.h")
-
-INCLUDE_DIRECTORIES("./network")
-INCLUDE_DIRECTORIES("./serialize")
-INCLUDE_DIRECTORIES("./util")
+ADD_SUBDIRECTORY(network)
+ADD_SUBDIRECTORY(serialize)
+ADD_SUBDIRECTORY(util)
 
 list(APPEND SOURCE "main.cpp")
 
-ADD_EXECUTABLE(PRC ${SOURCE})
+ADD_EXECUTABLE(PRC ${SOURCE} $<TARGET_OBJECTS:network>
+  $<TARGET_OBJECTS:serialize> $<TARGET_OBJECTS:util>)

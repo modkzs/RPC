@@ -34,4 +34,11 @@ namespace rpc{
   }while(0)
   void __assert_fail__() __attribute__((noreturn));;
 #endif
+
+#define rpc_throw_if(_cond, _exc, _msg...) \
+  do {\
+    if (rpc_unlikely((_cond))) \
+      RPC_THROW(_exc, _msg); \
+  }while(0)
+ 
 }
